@@ -16,7 +16,7 @@ pip install -r requirements.txt
 05 * * * * cd /path/to/this/dir; /usr/bin/python3 store_prices.py -r <region> -t <agile_tariff> > /path/to/your/log.log
 ```
 
-You should replace  and  with your local paths, and `<region>` and `<agile_tariff>` as follows:
+You should replace `/path/to/this/dir` and `/path/to/your/log.log` with your local paths, and `<region>` and `<agile_tariff>` as follows:
 
 - Go to the octopus developer page and scroll to "Unit rates"
 - There you will see a URL, for example "https://api.octopus.energy/v1/products/AGILE-FLEX-22-11-25/electricity-tariffs/E-1R-AGILE-FLEX-22-11-25-M/standard-unit-rates/"
