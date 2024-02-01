@@ -26,9 +26,9 @@ You should replace  and  with your local paths, and `<region>` and `<agile_tarif
 
 Upcoming prices can be fetched from another python script as follows:
 ```
-import get_prices_from_db
+import agile_prices
 
-get_prices_from_db(path_to_db, max_num_entries)
+agile_prices.get_prices_from_db(path_to_db, max_num_entries)
 ```
 
 ## Credits
