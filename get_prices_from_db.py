@@ -35,7 +35,7 @@ def get_prices_from_db(file, num_entries):
     return rows
 
 if __name__ == '__main__':
-    prices = get_prices_from_db(48)
+    prices = get_prices_from_db('agileprices.sqlite', 48)
     print(prices)
 else:
     sys.modules[__name__] = get_prices_from_db
