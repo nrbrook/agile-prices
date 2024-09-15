@@ -23,6 +23,7 @@ MAX_RETRIES = 15 # give up once we've tried this many times to get the prices fr
 
 MIN_NUM_FUTURE_PRICES = 10 # min number of prices in db before we try to fetch new prices
 
+ALWAYS_CHECK_AFTER_HOURS = 16 # always check for new prices after this hour
 
 def get_prices_from_api(request_uri: str) -> dict:
     """using the provided URI, request data from the Octopus API and return a JSON object.
@@ -247,7 +248,7 @@ def attempt_prices_update():
 
     retval = False
 
-    if num_prices_in_db() < min_num_prices:
+    if num_prices_in_db() < min_num_prices or datetime.now().hour >= ALWAYS_CHECK_AFTER_HOURS:
         data_rows = get_prices_from_api(AGILE_TARIFF_URI)
 
         insert_data(data_rows)
